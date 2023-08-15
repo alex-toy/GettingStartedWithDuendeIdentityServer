@@ -1,1 +1,2 @@
-# GettingStartedWithDuendeIdentityServer
+# Getting Started with Duende IdentityServer
+
