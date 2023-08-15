@@ -1,10 +1,21 @@
 # Getting Started with Duende IdentityServer
 
 
-## Implement and Monitor an Azure Infrastructure
+## Installation
 
-### Storage accounts
+- run command
+```
+dotnet new --install Duende.IdentityServer.Templates
+```
 
-- create a storage account
-<img src="/pictures/sa.png" title="storage account"  width="900">
+- check that all templates have been installed
+<img src="/pictures/templates.png" title="templates"  width="900">
+
+- create a project using template **isinmem**
+```
+dotnet new isinmem
+```
+
+- run the project
+<img src="/pictures/templates2.png" title="templates"  width="900">
 
