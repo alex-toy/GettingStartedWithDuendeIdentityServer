@@ -1,5 +1,9 @@
 # Getting Started with Duende IdentityServer
 
+In the project, we setup two applications, an instance of a REST service and a website. We use **Duende** IdentityServer to help protect the web service from unauthorized access. A client uses IdentityServer to get a token that the service requires and checks before allowing access.
+
+ Once the service is working, we then write an MVC front end for that service. Initially, the MVC application use IdentityServer to get an access token to allow the application access to the REST service. We then show how to provide a user login through IdentityServer that the MVC application takes advantage of. Once a user is authenticated, we show how to use that user’s access token to provide access to the REST service.
+
 
 ## Templates
 
@@ -27,12 +31,15 @@ dotnet new isinmem
 - install packages
 ```
 Duende.IdentityServer.AspNetIdentity
-Microsoft.AspNetCore.Identity.EntityFrameworkCore
-Microsoft.AspNetCore.Authentication.OpenIdConnect
-Microsoft.AspNetCore.Identity.UI
-Microsoft.EntityFrameworkCore.SqlServer
-Microsoft.EntityFrameworkCore.Tools
 ```
 
 - see the configuration of the server at : https://localhost:5443/.well-known/openid-configuration
 <img src="/pictures/config.png" title="server configuration"  width="900">
+
+
+## Web API
+
+- install packages
+```
+Microsoft.AspNetCore.Authentication.JwtBearer
+```
