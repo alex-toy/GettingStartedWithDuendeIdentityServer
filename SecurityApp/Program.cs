@@ -1,7 +1,17 @@
+using Microsoft.AspNetCore.Authentication;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+AuthenticationBuilder authenticationBuilder = builder.Services.AddAuthentication(defaultScheme: "cookies");
+authenticationBuilder.AddCookie("cookies", options =>
+{
+    options.Cookie.Name = "demo";
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+    options.LoginPath = new PathString("/account/login");
+});
 
 var app = builder.Build();
 
@@ -18,6 +28,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
